@@ -10,8 +10,16 @@ body{font-family:'Source Sans 3',Helvetica,Arial,sans-serif;color:#26231f;-webki
 section.page{margin:0 auto}
 section.page:last-child{break-after:auto;page-break-after:auto}
 @media screen{section.page{box-shadow:0 2px 14px rgba(0,0,0,.12);margin:24px auto}}
+@media screen{.resume-actions{position:fixed;top:18px;right:18px;z-index:10;display:flex;gap:8px;align-items:center}.resume-actions a,.resume-actions button{border:1px solid #26231f;border-radius:3px;background:#f9f6f0;color:#26231f;padding:10px 14px;font:600 14px/1 'Source Sans 3',Helvetica,Arial,sans-serif;text-decoration:none;cursor:pointer}.resume-actions a:first-child{background:#a0603f;border-color:#a0603f;color:#f9f6f0}.resume-actions a:hover,.resume-actions button:hover{transform:translateY(-1px)}.resume-share-status{color:#4a4540;font-size:13px}}
+@media screen and (max-width:600px){.resume-actions{position:sticky;top:0;justify-content:center;padding:12px;background:rgba(249,246,240,.96);border-bottom:1px solid #d9d2c6}.resume-actions a,.resume-actions button{padding:10px 11px;font-size:13px}}
+@media print{.resume-actions{display:none}}
 </style></head>
 <body>
+<div class="resume-actions" aria-label="Resume actions">
+  <a href="Kristin%20Jordan%20Resume.pdf" download>Download PDF</a>
+  <button type="button" id="share-resume">Share resume</button>
+  <span class="resume-share-status" id="resume-share-status" role="status" aria-live="polite"></span>
+</div>
 <section class="page" id="p1" data-screen-label="Page 1" style="background:#f9f6f0;color:#26231f;padding:0.6in 0.7in 0.5in;font-family:'Source Sans 3',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;box-sizing:border-box;width:8.5in;height:11in;overflow:hidden;break-after:page;page-break-after:always;display:flex;flex-direction:column;gap:20px">
   <header style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:20px;border-bottom:1px solid #26231f">
     <div style="display:flex;flex-direction:column;gap:8px">
@@ -169,4 +177,21 @@ section.page:last-child{break-after:auto;page-break-after:auto}
     <span>Kristin Leigh Jordan</span><span>2 / 2</span>
   </footer>
 </section>
+<script>
+  const shareButton = document.querySelector('#share-resume');
+  const shareStatus = document.querySelector('#resume-share-status');
+  shareButton.addEventListener('click', async () => {
+    const shareUrl = new URL('resume.html', window.location.href).href;
+    try {
+      if (navigator.share) {
+        await navigator.share({title: 'Kristin Leigh Jordan - Resume', url: shareUrl});
+        return;
+      }
+      await navigator.clipboard.writeText(shareUrl);
+      shareStatus.textContent = 'Link copied';
+    } catch (error) {
+      if (error.name !== 'AbortError') shareStatus.textContent = 'Copy unavailable';
+    }
+  });
+</script>
 </body></html>
