@@ -23,6 +23,12 @@ a{color:#a0603f;text-decoration:none}a:hover{text-decoration:underline}
 #work a:hover::after,#films a:hover::after,#contact a:not([href^="mailto"]):hover::after,#writing a:hover::after{transform:scaleX(1);transform-origin:left}
 a[href^="mailto"]:hover{background:#8a5136 !important;text-decoration:none}
 a[href="resume.html"]:hover,#writing a:hover{background:#26231f !important;color:#f9f6f0 !important;text-decoration:none}
+#about>div>h2,#work>div>h2{font-size:16px !important;letter-spacing:.16em !important}
+.outcomes{border-top:1px solid #26231f;border-bottom:1px solid #e4ddd1}
+.outcomes-grid{max-width:1080px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px}
+.outcome{display:flex;flex-direction:column;gap:4px}
+.outcome strong{font-family:Newsreader,Georgia,serif;font-size:clamp(36px,4vw,52px);font-weight:500;line-height:1;color:#a0603f}
+.outcome span{font-size:14px;line-height:1.4;color:#4a4540;max-width:16ch}
 @media(prefers-reduced-motion:reduce){#top h1,#top>p,#top>div{opacity:1;animation:none}#top>div a,#contact>div>div a,#writing a,#work a::after,#films a::after,#contact a::after,#writing a::after{transition:none}}
 </style>
 </head>
@@ -48,6 +54,7 @@ a[href="resume.html"]:hover,#writing a:hover{background:#26231f !important;color
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px">
       <a href="mailto:mountainyogabozeman@gmail.com" style="background:#a0603f;color:#f9f6f0;padding:14px 24px;font-weight:600;font-size:15px;border-radius:3px">Email me</a>
       <a href="resume.html" style="border:1px solid #26231f;color:#26231f;padding:13px 24px;font-weight:600;font-size:15px;border-radius:3px">Read my resume</a>
+      <a href="Kristin%20Jordan%20Resume.pdf" download style="color:#26231f;padding:13px 6px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#c9bfae">Download PDF</a>
       <a href="#contact" style="color:#26231f;padding:13px 6px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#c9bfae">Get in touch</a>
     </div>
   </header>
@@ -80,6 +87,15 @@ a[href="resume.html"]:hover,#writing a:hover{background:#26231f !important;color
           <p style="margin:0;font-size:16px;line-height:1.6;color:#d9d2c6;text-wrap:pretty">Writing, brand voice, and communications on one side; budgets, registration, vendors, and scheduling on the other. I've owned both for two decades.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="outcomes" aria-label="Selected outcomes">
+    <div class="outcomes-grid">
+      <div class="outcome"><strong>5</strong><span>consecutive sold-out retreat years</span></div>
+      <div class="outcome"><strong>30%+</strong><span>infusion volume growth supported</span></div>
+      <div class="outcome"><strong>3×</strong><span>Yoga Soup profit and client-base growth</span></div>
+      <div class="outcome"><strong>3</strong><span>documentaries made with communities</span></div>
     </div>
   </section>
 
@@ -236,6 +252,7 @@ a[href="resume.html"]:hover,#writing a:hover{background:#26231f !important;color
       <div style="display:flex;gap:14px;flex-wrap:wrap">
         <a href="mailto:mountainyogabozeman@gmail.com" style="background:#a0603f;color:#f9f6f0;padding:14px 24px;font-weight:600;font-size:15px;border-radius:3px">Email me</a>
         <a href="resume.html" style="border:1px solid #26231f;color:#26231f;padding:13px 24px;font-weight:600;font-size:15px;border-radius:3px">Read my resume</a>
+        <a href="Kristin%20Jordan%20Resume.pdf" download style="color:#26231f;padding:13px 6px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#c9bfae">Download PDF</a>
       </div>
       <div style="display:flex;gap:8px 28px;flex-wrap:wrap;font-size:15px;color:#4a4540;padding-top:24px;border-top:1px solid #e4ddd1">
         <span>Bozeman, Montana</span>
