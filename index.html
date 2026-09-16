@@ -3,10 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=kristin-site-reference.html">
   <title>Kristin Leigh Jordan - Community Builder, Program Designer, Storyteller</title>
+  <script>
+    fetch('kristin-site-reference.html')
+      .then(response => response.ok ? response.text() : Promise.reject(response.status))
+      .then(html => {
+        document.open();
+        document.write(html);
+        document.close();
+      })
+      .catch(() => {
+        document.querySelector('p').hidden = false;
+      });
+  </script>
 </head>
 <body>
-  <p>Loading <a href="kristin-site-reference.html">Kristin Leigh Jordan's site</a>.</p>
+  <p hidden>Open <a href="kristin-site-reference.html">Kristin Leigh Jordan's site</a>.</p>
 </body>
 </html>
